@@ -1,5 +1,5 @@
 <?php
 return [
-    'url' => 'https://YOUR_PROJECT_REF.supabase.co',
-    'key' => 'YOUR_SUPABASE_PUBLISHABLE_KEY',
+    'url' => 'https://thosjupahxdcvrfkwluw.supabase.co',
+    'key' => 'sb_publishable_XcmXHPcoHKj8JVwNkHw-Cw_XMa3D3Xi',
 ];
