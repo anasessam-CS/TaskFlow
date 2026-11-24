@@ -91,7 +91,9 @@ On Bash, set the same variables with `export` before running Maven. Tests that r
 
 | Name | Role or contribution | GitHub |
 | --- | --- | --- |
-| *Add team member* | *Add contribution* | *Add profile link* |
+| *Anas Essam Mohamed* | *Team Leader* | *https://github.com/anasessam-CS* |
+| *Marco Magdy Nessim* | *Team Member* | *https://github.com/marco94-cyber* |
+| *Abanoub Bahaa Nabil* | *Team Leader* | *https://github.com/bahaabebo11108-wq* |
 
 ## Screenshots and demo
 
