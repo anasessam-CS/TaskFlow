@@ -36,9 +36,11 @@ php -S 127.0.0.1:8000 -t public
 
 ## ٤. اربط PHP بـ Supabase
 
-1. انسخ `config/local.example.php` باسم `config/local.php` في نفس المجلد.
+1. انسخ `config/local.example.php` باسم `config/local.override.php` في نفس المجلد.
 2. من **Connect** في لوحة Supabase انسخ Project URL مثل `https://your-project-ref.supabase.co`.
-3. من **Settings → API Keys** انسخ **Publishable key** اللي يبدأ بـ `sb_publishable_`. عدّل قيمتي `url` و`key` في `config/local.php`. ممكن كمان تستخدم متغيري البيئة `SUPABASE_URL` و`SUPABASE_PUBLISHABLE_KEY`.
+3. من **Settings → API Keys** انسخ **Publishable key** اللي يبدأ بـ `sb_publishable_`. عدّل قيمتي `url` و`key` في `config/local.override.php`. ممكن كمان تستخدم متغيري البيئة `SUPABASE_URL` و`SUPABASE_PUBLISHABLE_KEY`.
+لو نسختك الحالية فيها بالفعل إعدادات حقيقية في `config/local.php`، احتفظ بها محليًا. قبل تنزيل أو دمج نسخة أحدث، انقل القيم إلى `config/local.override.php` حتى تقدر تستخدم ملف الإعدادات الافتراضي الموجود على GitHub.
+
 4. افتح صفحة التسجيل وأنشئ مستخدم اختبار. بعد تأكيد الإيميل سجّل الدخول. راجع المستخدم داخل **Authentication → Users**.
 5. أضف مهمة. راجعها داخل **Table Editor → tasks**. جرّب تعديل العنوان، تغيير الحالة، الحذف، وتسجيل الخروج. راجع إن العداد بيتغيّر بعد كل عملية.
 
@@ -59,7 +61,8 @@ php -S 127.0.0.1:8000 -t public
 | `public/logout.php` | يطلب إلغاء جلسة Supabase ويمسح بيانات الدخول من جلسة PHP. |
 | `config/bootstrap.php` | يدير الجلسة وCSRF ورسائل النماذج وتجديد الـ JWT ومعالجة نتائج المهام. |
 | `config/supabase.php` | يستخدم cURL للاتصال بواجهة Supabase عبر HTTPS وتمرير مفتاح المشروع وJWT عند الحاجة. |
-| `config/local.example.php` | نموذج إعداد الاتصال خارج مجلد الويب. |
+| `config/local.example.php` | نموذج لإنشاء ملف إعداد الاتصال المحلي. |
+| `config/local.php` | ملف الإعداد الافتراضي بقيم توضيحية. `config/local.override.php` يضبط القيم الفعلية على جهازك. |
 | `public/css/style.css` | يحدد الألوان والتخطيط وحجم البطاقات على الكمبيوتر والموبايل. |
 | `public/favicon.ico` | أيقونة TaskFlow في تبويب المتصفح. |
 | `public/js/script.js` | يطابق حقلي كلمة المرور، ويؤكد الحذف، ويرسل تغيير الحالة. PHP يعيد التحقق من النماذج. |

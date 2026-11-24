@@ -6,6 +6,10 @@ function supabase(string $method, string $path, ?array $body = null, ?string $to
 {
     $file = __DIR__ . '/local.php';
     $local = is_file($file) ? require $file : [];
+    $override = __DIR__ . '/local.override.php';
+    if (is_file($override)) {
+        $local = array_replace($local, require $override);
+    }
     $url = rtrim(getenv('SUPABASE_URL') ?: ($local['url'] ?? ''), '/');
     $key = getenv('SUPABASE_PUBLISHABLE_KEY') ?: ($local['key'] ?? '');
     if (!preg_match('~^https://[a-z0-9-]+\.supabase\.co$~D', $url) || !str_starts_with($key, 'sb_publishable_')) {
